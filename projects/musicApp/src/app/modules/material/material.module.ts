@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -15,8 +17,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     CommonModule,
     MatButtonModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule
   ],
-  exports : [ MatButtonModule,MatToolbarModule,MatSidenavModule]
+  exports : [ MatButtonModule,MatToolbarModule,MatSidenavModule,HttpClientModule]
 })
 export class MaterialModule { }
