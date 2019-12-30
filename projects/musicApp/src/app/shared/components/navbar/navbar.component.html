@@ -1,1 +1,9 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row class = "flex-row">
+    <span>Hello</span>
+    <div>
+    <button mat-raised-button type="button" class ="button-align" [routerLink] = "['/music']">Music</button>
+    <button mat-raised-button type="button" [routerLink] = "['/playlist']">Playlist</button>
+  </div>
+  </mat-toolbar-row>
+</mat-toolbar>
