@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -9,16 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private _http:HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   onClickMusicBtn(){
-    let call = this._http.get("http://localhost:8000/checkapi/") 
-    call.subscribe((response)=>{
-      console.log(response);
-    })
+   
   }
 
 }

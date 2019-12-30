@@ -16,6 +16,8 @@
     <mat-drawer #drawer class="example-sidenav" mode="side">
       <p>Auto-resizing sidenav</p>
       <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <mat-progress-bar mode="query" *ngIf="showFiller"></mat-progress-bar>
+
       <button (click)="showFiller = !showFiller" mat-raised-button>
         Toggle extra text
       </button>
