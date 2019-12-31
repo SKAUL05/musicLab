@@ -1,10 +1,5 @@
-<mat-list role="list">
-    
-    <mat-list-item role="listitem">All</mat-list-item>
-    <mat-list-item role="listitem">Bollywood</mat-list-item>
-    <mat-list-item role="listitem">Hollywood</mat-list-item>
-    <mat-list-item role="listitem">Punjabi</mat-list-item>
-    <mat-list-item role="listitem">Indi Pop</mat-list-item>
-
-  </mat-list>
-  
+<mat-nav-list>
+        <mat-list-item *ngFor="let genre of genreList">
+            {{genre}}
+        </mat-list-item>
+</mat-nav-list>

@@ -1,0 +1,1 @@
+export type GenreModel = 'All' |'Bollywood' |'Classical'|'IndiPop'|'Hollywood'|'Punjabi'
