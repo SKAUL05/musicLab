@@ -20,5 +20,5 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^checkapi',views.checkapi, name = "checkapi")
+    url(r'^profile/submit', views.profile_submit)
 ]

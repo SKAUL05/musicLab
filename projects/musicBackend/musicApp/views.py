@@ -26,3 +26,16 @@ def checkapi(request):
         return resp
     except ValueError as e:
         return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
+
+@api_view(["POST","OPTIONS"])
+def profile_submit(request):
+    json_input = request.POST
+    print(json_input)
+    resp = JsonResponse({"success":True,"details":[]})
+    resp["Access-Control-Allow-Origin"] = "http://localhost:4200"
+    resp["Access-Control-Allow-Methods"] = 'POST, GET, OPTIONS, DELETE, PUT'
+    resp["Access-Control-Allow-Headers"] = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+
+    return resp
+
+

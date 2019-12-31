@@ -1,17 +1,17 @@
 <div class="container">
     <h1>Profile</h1>
-    <form>
+    <form [formGroup]="profileForm" novalidate>
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required>
+        <input type="text" class="form-control" id="name" name="name" formControlName="profileName" #profileName required>
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" requires>
+        <input type="email" class="form-control" id="email" name = "email" formControlName="email" #email required>
       </div>
 
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit"  (click) = "profileSubmit(profileName.value,email.value)" class="btn btn-primary">Submit</button>
 
     </form>
 </div>
