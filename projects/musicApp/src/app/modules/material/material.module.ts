@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [],
@@ -19,8 +21,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HttpClientModule,
     MatProgressBarModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatListModule
   ],
-  exports : [ MatButtonModule,MatToolbarModule,MatSidenavModule,HttpClientModule,MatProgressBarModule,ReactiveFormsModule,MatFormFieldModule]
+  exports : [ MatButtonModule,MatToolbarModule,MatSidenavModule,HttpClientModule,MatProgressBarModule,ReactiveFormsModule,
+    MatFormFieldModule,MatListModule]
 })
 export class MaterialModule { }
