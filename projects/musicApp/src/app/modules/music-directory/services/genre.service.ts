@@ -8,7 +8,7 @@ export class GenreService {
   /***************************** Constructor **************************/
   constructor() { }
   /***************************** Properties **************************/
-  private genreList: GenreModel[] = ['All','Bollywood','Classical','IndiPop','Hollywood','Punjabi']
+  private genreList: GenreModel[] = ['All','Bollywood','Classical','IndiPop','Hollywood','Punjabi','']
   /***************************** Methods **************************/
   public getGenreList(): GenreModel[] {
     return this.genreList;

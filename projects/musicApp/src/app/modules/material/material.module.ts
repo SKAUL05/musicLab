@@ -9,6 +9,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -22,9 +24,10 @@ import {MatListModule} from '@angular/material/list';
     MatProgressBarModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   exports : [ MatButtonModule,MatToolbarModule,MatSidenavModule,HttpClientModule,MatProgressBarModule,ReactiveFormsModule,
-    MatFormFieldModule,MatListModule]
+    MatFormFieldModule,MatListModule,MatCardModule]
 })
 export class MaterialModule { }

@@ -20,11 +20,14 @@ export class ProfileEditorComponent implements OnInit {
   uri = "http://localhost:8000"
 
   profileSubmit(name, email) {
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+
     const obj = {
       name,
       email
     };
-    this.http.post(`${this.uri}/profile/submit`, obj)
+    this.http.post(`${this.uri}/profile/submit`, obj, {headers:headers})
         .subscribe(res => console.log('Done'));
   }
 

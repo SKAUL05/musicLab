@@ -6,5 +6,7 @@ from django.db import models
 # Create your models here.
 
 class Profile(models.Model):
-    name = models.CharField()
-    email = models.CharField()
+    profileName = models.CharField(max_length = 50)
+    email = models.CharField(max_length = 50)
+
+    name = "Profile"
