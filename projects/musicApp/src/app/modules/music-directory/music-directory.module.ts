@@ -7,6 +7,7 @@ import { MusicDirectoryContainerComponent } from './components/music-directory-c
 import { LeftSideBarComponent } from './components/left-side-bar/left-side-bar.component';
 import { MusicListComponent } from './components/music-list/music-list.component';
 import { GenerateDashPipe } from '../../shared/pipes/generate-dash.pipe';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { GenerateDashPipe } from '../../shared/pipes/generate-dash.pipe';
     CommonModule,
     MusicDirectoryRoutingModule,
     MaterialModule,
+    SharedModule
   ]
 })
 export class MusicDirectoryModule { }
