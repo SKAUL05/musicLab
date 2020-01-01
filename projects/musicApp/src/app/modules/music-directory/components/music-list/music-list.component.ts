@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenreService } from '../../services/genre.service';
 
 @Component({
   selector: 'music-list',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MusicListComponent implements OnInit {
 
-  constructor() { }
+  /***************************** Constructor **************************/
+
+  constructor(
+    private genreService: GenreService
+  ) { }
+
+  /***************************** Properties **************************/
+  public songList = []
+
+  /***************************** Methods **************************/
 
   ngOnInit() {
+    this.songList = this.genreService.getSongsList()
+
   }
 
 }
