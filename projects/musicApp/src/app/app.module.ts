@@ -10,6 +10,7 @@ import { GenerateDashPipe } from './shared/pipes/generate-dash.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,7 @@ import { GenerateDashPipe } from './shared/pipes/generate-dash.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule
-      ],
+        ],
   providers: [],
   bootstrap: [AppComponent]
 })
