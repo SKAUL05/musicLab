@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -25,9 +26,10 @@ import {MatCardModule} from '@angular/material/card';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   exports : [ MatButtonModule,MatToolbarModule,MatSidenavModule,HttpClientModule,MatProgressBarModule,ReactiveFormsModule,
-    MatFormFieldModule,MatListModule,MatCardModule]
+    MatFormFieldModule,MatListModule,MatCardModule,MatDividerModule]
 })
 export class MaterialModule { }

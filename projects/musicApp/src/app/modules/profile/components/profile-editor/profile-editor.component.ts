@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { FormGroup, FormControl} from '@angular/forms';
 
 
@@ -20,14 +20,17 @@ export class ProfileEditorComponent implements OnInit {
   uri = "http://localhost:8000"
 
   profileSubmit(name, email) {
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
+    const httpOptions = {
+      headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+         })
+ };
 
     const obj = {
       name,
       email
     };
-    this.http.post(`${this.uri}/profile/submit`, obj, {headers:headers})
+    this.http.post(`${this.uri}/profile/submit`, obj, httpOptions)
         .subscribe(res => console.log('Done'));
   }
 
