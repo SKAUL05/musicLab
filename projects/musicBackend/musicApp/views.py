@@ -19,30 +19,21 @@ from models import Profile
  
 
 # Create your views here.
-@api_view(["GET"])
-def checkapi(request):
-    try:
-        resp =  JsonResponse({'message':'Sarath Kaul'})
-        resp["Access-Control-Allow-Origin"] = "http://localhost:4200"
-        return resp
-    except ValueError as e:
-        return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(["POST","OPTIONS"])
 def profile_submit(request):
     json_input = request.body
+    details = {}
     if json_input:
         json_input = json.loads(json_input.decode('utf-8'))
         profile = Profile()
         profile.email = json_input['email']
         profile.profileName = json_input['name']
         profile.save()
+        details = {"message":"Saved Successfully!!!"}
 
-    resp = JsonResponse({"success":True,"details":[]})
-    resp["Access-Control-Allow-Origin"] = "http://localhost:4200"
-    resp["Access-Control-Allow-Methods"] = 'POST, GET, OPTIONS, DELETE, PUT'
-    resp["Access-Control-Allow-Headers"] = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
-
+    resp = JsonResponse({"success":True,"details":details})
     return resp
 
 
