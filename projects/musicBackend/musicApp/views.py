@@ -27,6 +27,7 @@ def profile_submit(request):
     details = {}
     if json_input:
         json_input = json.loads(json_input.decode('utf-8'))
+        Profile.objects.all().delete()
         profile = Profile()
         profile.email = json_input['email']
         profile.profileName = json_input['name']

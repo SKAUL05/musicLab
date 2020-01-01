@@ -8,5 +8,5 @@ from django.db import models
 class Profile(models.Model):
     profileName = models.CharField(max_length = 50)
     email = models.CharField(max_length = 50)
-
+    createdOn = models.DateTimeField(auto_now_add=True)  
     name = "Profile"
