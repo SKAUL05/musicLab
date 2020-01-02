@@ -9,6 +9,7 @@ import { MusicListComponent } from './components/music-list/music-list.component
 import { GenerateDashPipe } from '../../shared/pipes/generate-dash.pipe';
 import { SharedModule } from '../../shared/shared.module';
 import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AddDialogComponent } from './components/add-dialog/add-dialog.component
     CommonModule,
     MusicDirectoryRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   entryComponents:[AddDialogComponent]
 })

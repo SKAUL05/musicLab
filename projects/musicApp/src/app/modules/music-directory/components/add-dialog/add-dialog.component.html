@@ -1,1 +1,26 @@
-<p>add-dialog works!</p>
+<form autocomplete = "off" class="example-container" #profileForm = "ngForm">
+        <mat-form-field>
+          <input matInput placeholder="Title" name = "title" [(ngModel)] = "songData.title" required>
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder="Album" name = "album"  [(ngModel)] = "songData.album">
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder="Year" name = "year" [(ngModel)] = "songData.year">
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder="Artist" name = "artist" [(ngModel)] = "songData.artist" required>
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder="Cover URL" name = "url" [(ngModel)] = "songData.coverUrl">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Genre</mat-label>
+            <mat-select name = "genre" [(ngModel)] = "songData.genre" required>
+                <mat-option *ngFor="let genre of genreList" [value]="genre" >
+                {{genre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-stroked-button color="primary" [disabled] = "profileForm.invalid" (click) = "onSave()" class ="save-button"> Save </button>
+</form>

@@ -111,4 +111,8 @@ export class MusicListService {
     this.genreChangeSubject.next(genre);
   }
 
+  addSong(songData:SongModel){
+    songData['id'] = (this.songList.length + 1).toString()
+    this.songList.push(songData)
+  }
 }

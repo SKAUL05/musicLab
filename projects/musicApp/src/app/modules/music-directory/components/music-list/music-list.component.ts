@@ -37,6 +37,9 @@ export class MusicListComponent implements OnInit {
   public openDialog() {
     let matDialogRef:MatDialogRef<AddDialogComponent> = this.dialog.open(AddDialogComponent)
     matDialogRef.afterClosed().subscribe((data)=>{
+      if(data){
+        this.songList = this.musicListService.getSongsList()
+      }
       console.log('dialog closed',data);
     })
   }
