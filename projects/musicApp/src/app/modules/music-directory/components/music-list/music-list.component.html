@@ -1,12 +1,12 @@
 <div>
     <div>
         <mat-grid-list cols = "5" rowHeight="300px" class = "grid-list">
-            <mat-grid-tile *ngFor = "let song of songList" class = "grid-tile">
+            <mat-grid-tile *ngFor = "let song of songList" class = "grid-tile" >
                 <mat-card class = "song-card" >
                     <div class = "delete-icon">
                         <mat-icon aria-hidden="false" (click) = "deleteSong(song)">delete</mat-icon>
                     </div>
-                    <mat-card-content class = "card-content">
+                    <mat-card-content class = "card-content" >
                         <div class= "image-section">
                             <img defaultCoverUrl src = {{song.coverUrl}} alt="">
                         </div>
@@ -16,7 +16,14 @@
                             <div class = "artist">{{song.artist}}</div>
                         </div>
                     </mat-card-content>
+                    <mat-card-content class = "hidden-card" >
+                        <p>{{song.title}}</p>
+                        <p>{{song.album}}</p>
+                        <p>{{song.artist}}</p>
+                        <p>{{song.year}}</p>
+                    </mat-card-content>
                 </mat-card>
+                
             </mat-grid-tile>
         </mat-grid-list>
     </div>

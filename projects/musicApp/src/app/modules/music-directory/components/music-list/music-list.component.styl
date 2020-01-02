@@ -8,6 +8,16 @@
 .delete-icon
     display none
 
+.hidden-card    
+    visibility hidden 
+
+.song-card:hover 
+    .hidden-card
+        visibility visible
+    .card-content
+        display none
+    
+
 .grid-tile:hover .delete-icon
     display inline-block
     position absolute
@@ -15,6 +25,8 @@
     top 3px
     margin-right 7px
     cursor pointer
+
+
 
 .song-card
     width 200px
@@ -24,6 +36,7 @@
     flex-direction column
     margin-top  20px
     margin-left 20px
+
     .card-content
         flex 1
         .image-section

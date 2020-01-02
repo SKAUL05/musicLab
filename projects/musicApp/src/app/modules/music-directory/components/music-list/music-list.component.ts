@@ -19,6 +19,7 @@ export class MusicListComponent implements OnInit {
 
   /***************************** Properties **************************/
   public songList = []
+  public showCard = false
   /***************************** Methods **************************/
 
   ngOnInit() {
