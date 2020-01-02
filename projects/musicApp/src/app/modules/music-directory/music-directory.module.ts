@@ -8,15 +8,17 @@ import { LeftSideBarComponent } from './components/left-side-bar/left-side-bar.c
 import { MusicListComponent } from './components/music-list/music-list.component';
 import { GenerateDashPipe } from '../../shared/pipes/generate-dash.pipe';
 import { SharedModule } from '../../shared/shared.module';
+import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
 
 
 @NgModule({
-  declarations: [MusicDirectoryContainerComponent, LeftSideBarComponent, MusicListComponent,GenerateDashPipe],
+  declarations: [MusicDirectoryContainerComponent, LeftSideBarComponent, MusicListComponent,GenerateDashPipe, AddDialogComponent],
   imports: [
     CommonModule,
     MusicDirectoryRoutingModule,
     MaterialModule,
     SharedModule
-  ]
+  ],
+  entryComponents:[AddDialogComponent]
 })
 export class MusicDirectoryModule { }

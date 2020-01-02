@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { FormGroup, FormControl} from '@angular/forms';
 import { environment } from 'projects/musicApp/src/environments/environment';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -34,19 +35,28 @@ export class ProfileEditorComponent implements OnInit {
   
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private _matSnackBar: MatSnackBar) { }
 
   uri = environment.defaultUri
 
   profileSubmit() {
     this.step++;
 
+    let details = {}
     
     this.http.post(`${this.uri}/profile/submit`, this.profileData)
-        .subscribe(res => console.log(res['details']['message']));
-    for (let a_data in this.profileData){
-      this.profileData[a_data] = ''
-    }
+        .subscribe((res) => {
+          details = res['details']
+          console.log(details)
+          this._matSnackBar.open(details['message'], "", {
+            duration: 1000,
+          });
+          for (let a_data in this.profileData){
+            this.profileData[a_data] = ''
+          }
+        });
+        
+   
   }
 
 
