@@ -4,5 +4,6 @@ export interface SongModel {
     year: number,
     artist: string,
     id: string,
-    coverUrl: string
+    coverUrl: string,
+    genre: string
 }

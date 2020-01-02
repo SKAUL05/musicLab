@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GenreService } from '../../services/genre.service';
+import { MusicListService } from '../../services/music-list.service';
 
 @Component({
   selector: 'music-list',
@@ -11,17 +11,23 @@ export class MusicListComponent implements OnInit {
   /***************************** Constructor **************************/
 
   constructor(
-    private genreService: GenreService
+    private musicListService: MusicListService
   ) { }
 
   /***************************** Properties **************************/
   public songList = []
-
   /***************************** Methods **************************/
 
   ngOnInit() {
-    this.songList = this.genreService.getSongsList()
-
+    this.songList = this.musicListService.getSongsList()
+    this.setUpdateListener();
+    // this.genre = this.leftSideBarComponent.genre
+    // console.log(this.genre)
+  }
+  private setUpdateListener(){
+    this.musicListService.checkGenreChanged().subscribe((genre)=>{
+      this.songList = this.musicListService.getGenreSongsList(genre)
+    })
   }
 
 }

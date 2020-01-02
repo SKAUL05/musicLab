@@ -1,5 +1,5 @@
 <mat-nav-list>
-        <mat-list-item *ngFor="let genre of genreList">
+        <mat-list-item *ngFor="let genre of genreList" (click) = "genreClicked(genre)">
             {{genre}}
         </mat-list-item>
 </mat-nav-list>
