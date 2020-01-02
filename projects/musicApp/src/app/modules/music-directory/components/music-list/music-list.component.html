@@ -1,20 +1,20 @@
 <div>
     <div>
         <mat-grid-list cols = "5" rowHeight="300px" class = "grid-list">
-        <mat-grid-tile *ngFor = "let song of songList">
-            <mat-card class = "song-card" >
-                <mat-card-content class = "card-content">
-                    <div class= "image-section">
-                        <img defaultCoverUrl src = {{song.coverUrl}} alt="">
-                    </div>
-                    <mat-divider></mat-divider>
-                    <div class = "details-section">
-                        <div class = "title">{{song.title}}</div>
-                        <div class = "artist">{{song.artist}}</div>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </mat-grid-tile>
+            <mat-grid-tile *ngFor = "let song of songList" class = "grid-tile">
+                <mat-card class = "song-card" >
+                    <mat-card-content class = "card-content">
+                        <div class= "image-section">
+                            <img defaultCoverUrl src = {{song.coverUrl}} alt="">
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class = "details-section">
+                            <div class = "title">{{song.title}}</div>
+                            <div class = "artist">{{song.artist}}</div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
         </mat-grid-list>
     </div>
     <div class = "add-button">
