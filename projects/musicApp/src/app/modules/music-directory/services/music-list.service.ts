@@ -115,4 +115,17 @@ export class MusicListService {
     songData['id'] = (this.songList.length + 1).toString()
     this.songList.push(songData)
   }
+
+  deleteSong(id,songs){
+    console.log(id)
+    console.log(songs)
+    this.songList.splice(id-1,1)
+    for (let a_song in songs){
+      if (songs[a_song]['id'] == id) {
+          songs.splice(a_song,1)
+      }
+    }
+    return songs
+  }
+
 }

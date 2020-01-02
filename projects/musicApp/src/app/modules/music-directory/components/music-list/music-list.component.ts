@@ -43,6 +43,11 @@ export class MusicListComponent implements OnInit {
       console.log('dialog closed',data);
     })
   }
+
+  public deleteSong(song){
+    console.log(song)
+    this.songList = this.musicListService.deleteSong(song['id'],this.songList)
+  }
   
 
 }
