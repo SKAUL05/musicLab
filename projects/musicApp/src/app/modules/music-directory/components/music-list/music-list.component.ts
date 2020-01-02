@@ -21,8 +21,6 @@ export class MusicListComponent implements OnInit {
   ngOnInit() {
     this.songList = this.musicListService.getSongsList()
     this.setUpdateListener();
-    // this.genre = this.leftSideBarComponent.genre
-    // console.log(this.genre)
   }
   private setUpdateListener(){
     this.musicListService.checkGenreChanged().subscribe((genre)=>{

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { FormGroup, FormControl} from '@angular/forms';
+import { environment } from 'projects/musicApp/src/environments/environment';
 
 
 @Component({
@@ -10,6 +11,14 @@ import { FormGroup, FormControl} from '@angular/forms';
 })
 export class ProfileEditorComponent implements OnInit {
   step = 0;
+  public profileData = {
+    name:'',
+    email:'',
+    age:null,
+    dob:null,
+    country:'',
+    password:''
+  }
 
   setStep(index: number) {
     this.step = index;
@@ -27,33 +36,25 @@ export class ProfileEditorComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  profileForm = new FormGroup({
-    profileName: new FormControl(''),
-    email: new FormControl(''),
-  });
-  
+  uri = environment.defaultUri
 
-  uri = "http://localhost:8000"
+  profileSubmit() {
+    this.step++;
 
-  profileSubmit(name, email) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-      'Content-Type':  'application/json'
-         })
- };
-
-    const obj = {
-      name,
-      email
-    };
-    this.http.post(`${this.uri}/profile/submit`, obj, httpOptions)
-        .subscribe(res => console.log('Done'));
+    
+    this.http.post(`${this.uri}/profile/submit`, this.profileData)
+        .subscribe(res => console.log(res['details']['message']));
+    for (let a_data in this.profileData){
+      this.profileData[a_data] = ''
+    }
   }
 
 
+
   ngOnInit() {
-    
-    
+    // this.http.get(`${this.uri}`).subscribe(res =>
+    //   console.log(res['data'])
+    //   );
 
   }
 
