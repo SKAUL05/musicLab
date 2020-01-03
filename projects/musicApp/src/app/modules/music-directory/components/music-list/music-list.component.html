@@ -17,10 +17,33 @@
                         </div>
                     </mat-card-content>
                     <mat-card-content class = "hidden-card" >
-                        <p>{{song.title}}</p>
-                        <p>{{song.album}}</p>
-                        <p>{{song.artist}}</p>
-                        <p>{{song.year}}</p>
+                        <div class="hidden-card-form">
+                        <form autocomplete = "off"  #profileForm = "ngForm">
+                                <mat-form-field appearance="standard" class = "form-field">
+                                        <input matInput placeholder="Title" name = "title" [(ngModel)] = "song.title" required>
+                                      </mat-form-field>
+                                      <mat-form-field appearance="standard" class = "form-field">
+                                              <input matInput placeholder="Album" name = "album"  [(ngModel)] = "song.album">
+                                      </mat-form-field>
+                                      <mat-form-field appearance="standard" class = "form-field">
+                                              <input matInput placeholder="Year" name = "year" [(ngModel)] = "song.year">
+                                      </mat-form-field>
+                                      <mat-form-field appearance="standard" class = "form-field">
+                                              <input matInput placeholder="Artist" name = "artist" [(ngModel)] = "song.artist" required>
+                                      </mat-form-field>
+                    
+                                      <mat-form-field appearance="standard" class = "form-field">
+                                          <mat-select name = "genre" [(ngModel)] = "song.genre" required>
+                                              <mat-option *ngFor="let genre of genreList" [value]="genre" >
+                                              {{genre}}
+                                              </mat-option>
+                                          </mat-select>
+                                      </mat-form-field>
+                                      <button mat-icon-button [disabled] = "profileForm.invalid || !profileForm.dirty" (click) = "update(song)" class = "update-button"> 
+                                            <mat-icon>update</mat-icon>
+                                        </button>
+                        </form>
+                    </div>
                     </mat-card-content>
                 </mat-card>
                 

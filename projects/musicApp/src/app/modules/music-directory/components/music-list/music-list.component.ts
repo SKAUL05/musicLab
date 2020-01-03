@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MusicListService } from '../../services/music-list.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AddDialogComponent } from '../add-dialog/add-dialog.component';
+import { GenreService } from '../../services/genre.service';
 
 @Component({
   selector: 'music-list',
@@ -14,17 +15,20 @@ export class MusicListComponent implements OnInit {
 
   constructor(
     private musicListService: MusicListService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private genreService: GenreService
   ) { }
 
   /***************************** Properties **************************/
   public songList = []
   public showCard = false
+  public genreList = []
   /***************************** Methods **************************/
 
   ngOnInit() {
     this.songList = this.musicListService.getSongsList()
     this.setUpdateListener();
+    this.genreList = this.genreService.getGenreList()
 
   }
  
@@ -50,5 +54,8 @@ export class MusicListComponent implements OnInit {
     this.songList = this.musicListService.deleteSong(song['id'],this.songList)
   }
   
-
+  public update(song){
+    console.log(song)
+    this.songList = this.musicListService.updateSong(song,this.songList)
+  }
 }

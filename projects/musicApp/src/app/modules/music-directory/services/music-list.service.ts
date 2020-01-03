@@ -128,4 +128,21 @@ export class MusicListService {
     return songs
   }
 
+  updateSong(song, songs){
+    for (let a_song in songs){
+      if (songs[a_song]['id'] == song['id']){
+        songs[a_song] = song
+      }
+    }
+
+    for (let a_song in this.songList){
+      if (this.songList[a_song]['id'] == song['id']){
+        this.songList[a_song] = song
+      }
+    }
+
+    return songs
+  }
+
+
 }
