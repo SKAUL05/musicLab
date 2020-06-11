@@ -34,7 +34,6 @@ def profile_submit(request):
         profile.save()
         details = {"message":"Saved Successfully!!!"}
 
-    resp = JsonResponse({"success":True,"details":details})
-    return resp
+    return JsonResponse({"success":True,"details":details})
 
 
