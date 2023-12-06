@@ -23,9 +23,8 @@ from models import Profile
 
 @api_view(["POST","OPTIONS"])
 def profile_submit(request):
-    json_input = request.body
     details = {}
-    if json_input:
+    if json_input := request.body:
         json_input = json.loads(json_input.decode('utf-8'))
         Profile.objects.all().delete()
         profile = Profile()
